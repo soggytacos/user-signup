@@ -1,0 +1,12 @@
+{% extends "US-base.html" %}
+
+{% block content %}
+<h2>You're new username is {{username}}.</h2>
+
+
+
+
+{%if error %}
+    <p class='error'>{{error}}</p>
+{% endif %}
+{% endblock %}
