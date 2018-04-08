@@ -7,45 +7,22 @@
 <p>
     <label class="inputbox">
         Username:
-        <input type="text" name="username" />
+        <input style="margin-left: 42px" type="text" name="username" value="{{ username }}" /><a class="error"> {{ usernameerror }}</a>
     </label>
-</p>
-{% if usernameerror %}
-<p class="error">{{ usernameerror }}</p>
-{% endif %}
-<p>
-    <label class="inputbox">
+    <p></p><label class="inputbox">
         Password:
-        <input type="text" name="password" />
+        <input style="margin-left: 44px" type="password" name="password" /><a class="error"> {{ passworderror }}</a>
     </label>
-</p>
-{% if passworderror %}
-<p class="error">{{ passworderror }}</p>
-{% endif %}
-<p>
-    <label class="inputbox">
+    <p></p><label class="inputbox">
         Verify Password:
-        <input type="text" name="verify-password" />
+        <input type="password" name="verify-password" /><a class="error"> {{ vpassworderror }}</a>
     </label>
-</p>
-{% if vpassworderror %}
-<p class="error">{{ vpassworderror }}</p>
-{% endif %}
-<p>
-    <label class="inputbox">
+    <p></p><label class="inputbox">
         Email (optional):
-        <input type="text" name="email" />
+        <input type="text" name="email" value="{{ email }}" /><a class="error"> {{ emailerror }}</a>
     </label>
-</p>
-{% if emailerror %}
-<p class="error">{{ emailerror }}</p>
-{% endif %}
-<p>
-    <input type="submit" value="Create User" />
+    <p></p><input type="submit" value="Create User" />
 </p>
 </form>
 
-{% if error %}
-    <p class='error'>{{ error }}</p>
-{% endif %}
 {% endblock %}
