@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Enter an username and password that you would like to use.</h2>
+
+<form action="/confirmation" method="post" />
+<p>
+    <label class="inputbox">
+        Username:
+        <input type="text" name="username" />
+    </label>
+</p>
+{% if usernameerror %}
+<p class="error">{{ usernameerror }}</p>
+{% endif %}
+<p>
+    <label class="inputbox">
+        Password:
+        <input type="text" name="password" />
+    </label>
+</p>
+{% if passworderror %}
+<p class="error">{{ passworderror }}</p>
+{% endif %}
+<p>
+    <label class="inputbox">
+        Verify Password:
+        <input type="text" name="verify-password" />
+    </label>
+</p>
+{% if vpassworderror %}
+<p class="error">{{ vpassworderror }}</p>
+{% endif %}
+<p>
+    <label class="inputbox">
+        Email (optional):
+        <input type="text" name="email" />
+    </label>
+</p>
+{% if emailerror %}
+<p class="error">{{ emailerror }}</p>
+{% endif %}
+<p>
+    <input type="submit" value="Create User" />
+</p>
+</form>
+
+{% if error %}
+    <p class='error'>{{ error }}</p>
+{% endif %}
+{% endblock %}
